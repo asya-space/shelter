@@ -1,0 +1,41 @@
+@import '../_vars/vars';
+
+/* basic fonts */
+@mixin basic {
+  font-weight: $regular;
+  font-style: $norm;
+}
+
+@mixin main {
+  font-family: $geo;
+  font-weight: $regular;
+  font-size: 35px;
+  font-style: $norm;
+  line-height: 45px;
+  color: $dark;
+}
+
+@mixin temp {
+  font-family: $geo;
+  font-weight: $regular;
+  font-style: $norm;
+  font-size: $offset;
+  line-height: 22px;
+  color: $dark;
+}
+
+@mixin controls {
+  display: $flx;
+  justify-content: $ctr;
+  align-items: $ctr;
+  border: 1px solid transparent;
+  border-radius: $hund;
+  width: 52px;
+  height: 52px;
+}
+
+@mixin minimal {
+  text-align: $ctr;
+  font-size: $std;
+  line-height: $lineHeight;
+}
