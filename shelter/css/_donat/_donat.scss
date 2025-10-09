@@ -1,0 +1,114 @@
+@import '../_vars/vars';
+@import '../_mixins/mixins';
+
+.donat {
+  max-width: 100%;
+  background-color: $slider-back;
+  background-size: 100%;
+
+  .container {
+    display: $flx;
+    padding: 70px 0 80px;
+    justify-content: center;
+    background-color: $slider-back;
+  }
+
+  &__pic {
+    margin-right: 50px;
+  }
+
+  &__main {
+    margin-bottom: $offset;
+    @include main();
+    max-width: 300px;
+  }
+
+  &__bank {
+    margin-bottom: $offset;
+    @include basic();
+    font-family: $geo;
+    font-size: 15px;
+    line-height: 16px;
+  }
+
+  &__digit {
+    margin-bottom: $offset;
+    display: $flx;
+    max-width: 349px;
+    @include temp();
+    padding: 10px 15px;
+    background-color: $primary;
+    border-radius: $radius;
+    cursor: default;
+  }
+
+  &__svg {
+    margin-right: 15px;
+  }
+
+  &__txt {
+    margin-bottom: $offset;
+    max-width: 380px;
+    font-family: $aria;
+    font-weight: $regular;
+    font-style: italic;
+    font-size: 12px;
+    line-height: 18px;
+    color: $bank;
+  }
+}
+
+@media (max-width: 768px) {
+  .donat {
+    .container {
+      padding-top: 80px;
+      padding-bottom: 95px;
+      flex-direction: column-reverse;
+        max-width: 380px;
+    }
+
+    &__txt {
+      margin-bottom: 60px;
+    }
+    
+    &__pic {
+      margin-right: 0;
+      transform: translateX(-60px);
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .donat {
+    .container {
+      padding-top: 42px;
+      align-items: $ctr;
+    }
+
+    &__main {
+      @include minimal();
+    }
+
+    &__bank {
+      text-align: $ctr;
+    }
+
+    &__digit {
+      align-items: $ctr;
+      margin: $aut;
+      max-width: 280px;
+      font-size: 15px;
+      line-height: 16px;
+    }
+
+    &__txt {
+      margin: 20px auto 42px auto;
+      margin-top: 20px;
+      max-width: 280px;
+    }
+
+    &__pic {
+      transform: translateX(5%);
+    }
+  }
+}

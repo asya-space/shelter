@@ -1,0 +1,95 @@
+@import '../_vars/vars';
+@import '../_mixins/mixins';
+
+.footer {
+  background: linear-gradient(270deg, rgba(33,31,32,1) 0%, rgba(91,72,58,1) 100%, rgba(38,36,37,1) 100%);
+
+  .container {
+    padding: 60px 40px 40px 40px;
+    display: $flx;
+    background: 96% 98% no-repeat url('../img/footer-puppy.png');
+  }
+
+  &__main {
+    margin-bottom: 35px;
+    @include main();
+    color: $white;
+  }
+
+  &__left {
+    margin-right: 160px;
+    max-width: 278px;
+  }
+
+  &__right {
+    max-width: 302px;
+  }
+
+  &__list {
+    &__item {
+      display: $flx;
+      align-items: center;
+
+      &__svg {
+        margin-right: $offset;
+      }
+
+      &__link {
+        @include temp();
+        color: $primary;
+        transition: all .3s ease-in-out;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &__item:first-child {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    .container {
+      padding-top: 35px;
+      padding-bottom: 22.4rem;
+      justify-content: $ctr;
+      background-position: 50% 100%;
+    }
+
+    &__left {
+      margin-right: 60px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .footer {
+    .container {
+      padding: 30px 35px;
+      flex-direction: $col;
+      justify-content: flex-start;
+      min-height: 57rem;
+    }
+
+    &__main {
+      @include minimal();
+      margin-bottom: 45px;
+    }
+
+    &__left, 
+    &__right {
+      margin-right: 0;
+    }
+
+    &__left {
+      margin-bottom: 40px;
+    }
+
+    &__right {
+      margin-bottom: 30px;
+    }
+  }
+}
