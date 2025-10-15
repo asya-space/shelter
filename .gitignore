@@ -105,8 +105,12 @@ dist
 .tern-port
 
 # general settings
-shelter/css/fonts.css
-shelter/css/normalize.css
+page/css/fonts.css
+page/css/normalize.css
+page/css/_*
+*.map
+style.css
+pets/*.map
 
 # optional settings
 .linthtmlrc.json
