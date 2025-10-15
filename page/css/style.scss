@@ -1,0 +1,15 @@
+@use "sass:meta";
+@use "_body/body";
+@use "normalize.css";
+
+@include meta.load-css("_nav/nav");
+@include meta.load-css("_notonly/notonly");
+@include meta.load-css("_about/about");
+@include meta.load-css("_slider/slider");
+@include meta.load-css("_help/help");
+@include meta.load-css("_donat/donat");
+@include meta.load-css("_footer/footer");
+
+html {
+  scroll-behavior: smooth;
+}
