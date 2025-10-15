@@ -1,0 +1,319 @@
+@use "../normalize.css";
+@use '../_vars/vars';
+@use '../_mixins/mixins';
+@use '../_body/body';
+@use '../_nav/nav';
+@use '../_slider/slider';
+@use "../_footer/footer";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: transparent;
+  margin: 0 auto;
+}
+
+.header {
+  .container {
+    display: vars.$flx;
+    padding: 30px 40px;
+    margin-bottom: 0;
+  }
+
+  &__link {
+    color: #545454;
+    }
+
+  &__txt {
+    font-family: vars.$merry;
+    @include mixins.basic();
+    font-size: 13px;
+    color: vars.$black;
+    letter-spacing: vars.$one;
+  }
+}
+
+.nav {
+  margin-left: auto;
+
+  &__list {
+    display: vars.$flx;
+
+    &__item {
+      position: relative;
+      transition: all .3s ease-in-out;
+
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+
+      &:first-child {
+        cursor: pointer;
+        &::after {
+          opacity: 0;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        display: block;
+        opacity: 0;
+        bottom: -3px;
+        right: 0;
+        width: 0%;
+        height: 3px;
+        background-color: vars.$primary;
+      }
+
+      &:hover::after {
+        opacity: 1;
+        width: 100%;
+        transition: all .5s ease-in-out;
+      }
+
+      &__link {
+        font-family: vars.$merry;
+        @include mixins.basic();
+        line-height: vars.$line;
+        font-size: 15px;
+        color: vars.$black;
+        letter-spacing: vars.$one;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.our {
+  .container {
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 95px;
+  }
+
+  .slider {
+    margin-bottom: 0;
+    max-width: 1200px;
+
+    &__list > * {
+      min-width: vars.$card;
+      overflow-x: hidden;
+    }
+
+    &__list {
+      margin: 0;
+      margin-bottom: 65px;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: vars.$mid;
+      column-gap: 40px;
+
+      &__item:not(:last-child) {
+        margin-right: 0;
+      }
+
+      &__item {
+        border-radius: vars.$radius;
+        transition: all .3s ease-in-out;
+
+          &:hover {
+            background-color: #F4F2F2;
+            box-shadow: 1px 1px 3px vars.$grey;
+          }
+
+        &__card {
+          &__btn {
+            max-width: vars.$full;
+          }
+
+          &__pic {
+            &__img {
+              max-width: vars.$full;
+            }
+          }
+        }
+      }
+    }
+
+    &__controls {
+      display: vars.$flx;
+      justify-content: vars.$ctr;
+  
+      &__digit {
+        @include mixins.controls();
+        @include mixins.temp();
+        margin-right: vars.$offset;
+        background-color: vars.$primary;
+      }
+
+      &__arrow {
+        @include mixins.controls();
+        transition: all .3s ease-in-out;
+      }
+
+      &__prev,
+      &__next {
+        margin-right: 15px;
+      }
+
+      &__double-prev {
+        margin-right: vars.$offset;
+        border-color: vars.$grey;
+      }
+      &__prev {
+        border-color: vars.$grey;
+      }
+
+      &__next,
+      &__double-next {
+        border-color: vars.$primary;
+      }
+
+      &__next:hover,
+      &__double-next:hover {
+        background-color: vars.$hov;
+        cursor: pointer;
+      }
+
+      &__next:active,
+      &__double-next:active {
+        background-color: vars.$primary;
+      }
+    }
+  }
+}
+
+.footer {
+  .container {
+    background: 96% 98% no-repeat url('../../img/footer-puppy.png');
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1221px) {
+  .our {
+    .slider {
+      &__list {
+        grid-template-columns: repeat(2, minmax(vars.$card, 1fr));
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    .container {
+      padding: 30px;
+    }
+  }
+
+  .our {
+    .container {
+      padding-bottom: 75px;
+    }
+
+    &__title {
+      margin-bottom: 30px;
+    }
+
+    .slider {
+      &__list {
+        #scarlet, 
+        #freddie {
+          display: none !important;
+        }
+      }
+    }
+
+    .slider__controls {
+      margin-top: -30px;
+    }  
+  }
+
+  .footer {
+    .container {
+      padding-top: 35px;
+      padding-bottom: 22.4rem;
+      justify-content: vars.$ctr;
+      background-position: 50% 100%;
+    }
+
+    &__left {
+      margin-right: 60px;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .our {
+    .container {
+      padding: 42px 25px 42px;
+    }
+
+    .slider {
+      max-width: 290px;
+
+      &__list {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      &__controls {
+        transform: translateX(-11px);
+
+        &__double-prev {
+          margin-right: 10px;
+        }
+
+        &__prev,
+        &__next {
+          margin-right: 10px;
+        }
+
+        &__digit {
+          margin-right: 10px;
+        }
+      }
+
+      #woody,
+      #jennifer {
+        display: grid !important;
+      }
+    }
+  }
+
+  .footer {
+    .container {
+      padding: 30px 35px;
+      flex-direction: vars.$col;
+      justify-content: flex-start;
+      min-height: 57rem;
+    }
+
+    &__main {
+      @include mixins.minimal();
+      margin-bottom: 45px;
+    }
+
+    &__left, 
+    &__right {
+      margin-right: 0;
+    }
+
+    &__left {
+      margin-bottom: 40px;
+    }
+
+    &__right {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+
+
+
+  
+  
