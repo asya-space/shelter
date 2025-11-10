@@ -193,7 +193,7 @@ body {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1221px) {
+@media (min-width: 768px) and (max-width: 1220px) {
   .our {
     .slider {
       &__list {
@@ -208,6 +208,31 @@ body {
     .container {
       padding: 30px;
     }
+  }
+
+  .nav__list {
+      @include mixins.navList();
+      &__item {
+        @include mixins.navItem();
+        &__link {
+          @include mixins.navLink();
+        }
+      }
+    }
+
+  .burger {
+    z-index: 2;
+    &__line {
+      background-color: #545454;
+    }
+  }
+
+  .burger-active .burger__line {
+    background-color: #F1CDB3;
+  }
+
+  #menu {
+    z-index: 1;
   }
 
   .our {
