@@ -34,8 +34,9 @@ prev.addEventListener('click', () => {
 
     slidesArea.style.transform = `translateX(${+offset}px)`;
 })*/
-const burgerBtn = document.querySelector('.burger');
-const nav = document.getElementById('menu');
+const burgerBtn = document.querySelector('.burger'),
+      nav = document.getElementById('menu'),
+      links = nav.querySelectorAll('.nav__list__item__link');
 let axisY = 0;
 
 function stopBody() {
@@ -71,3 +72,7 @@ function toggleMenu() {
 }
 
 burgerBtn.addEventListener('click', toggleMenu);
+
+links.forEach(link => {
+    link.addEventListener('click', closeMenu);
+}); 
