@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  user-select: none;
 }
 
 body {
@@ -189,7 +190,7 @@ body {
 
 .footer {
   .container {
-    background: 96% 98% no-repeat url('../../img/footer-puppy.png');
+    background: 96% 98% no-repeat url('../../assets/img/footer-puppy.png');
   }
 }
 
@@ -208,6 +209,11 @@ body {
     .container {
       padding: 30px;
     }
+  }
+
+  .body-lock::before {
+    @include mixins.lock();
+    transition: all .3s ease-in-out;
   }
 
   .nav__list {
