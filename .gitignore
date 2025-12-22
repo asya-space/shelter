@@ -105,12 +105,9 @@ dist
 .tern-port
 
 # general settings
-page/css/pets/*
-page/css/pets/!style.min.css
-page/css/pets/!style.scss
-page/css/normalize.css
-page/css/_*
-*.map
+*.min.css
+*.css.map
+_*
 style.css
 
 # optional settings
