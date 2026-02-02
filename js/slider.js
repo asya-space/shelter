@@ -1,35 +1,18 @@
-import { pets } from './pets.js';
+import { pets } from './data/pets.js';
+import { shuffle } from './utils/shuffle.js'
+import { generatePetCard } from './components/generateCard.js';
+import { render } from './utils/render.js';
 /* arrows */
 const rightBtn = document.querySelector('.slider__next');
 const leftBtn = document.querySelector('.slider__prev');
 const ul = document.querySelector('.slider__list');
 
-/* generate slides */
-
-const template = document.querySelector('.template');
-function generateCard(pet) {
-    const li = template.cloneNode(true);
-    li.style.display = '';
-    const img = li.querySelector('.slider__list__item__card__pic__img');
-    const source = li.querySelector('source');
-    const name = li.querySelector('.slider__list__item__card__name');
-    img.src = pet.img;
-    img.alt = pet.name;
-    if(source) { source.srcset = pet.img};
-    name.textContent = pet.name;
-    return li;
-}
-
 /* generation random cards */
-const allItems = pets.map((_, index) => index);
+const allIndexes = pets.map((_, index) => index);
 
-function getSet(show, countNew) {
-   const item = allItems.filter(card => !show.includes(card)) // includes => method. look at MDN
-   for(let i = item.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [item[i], item[j]] = [item[j], item[i]];
-   }
-   return item.slice(0, countNew);
+function getNextIndexes(currentIndexes, count) {
+   const availableIndexes = allIndexes.filter(index => !currentIndexes.includes(index));
+   return shuffle(availableIndexes).slice(0, count);
 }
 
 function getVisibleCount() {
@@ -40,18 +23,14 @@ function getVisibleCount() {
 }
 
 let visibleCount = getVisibleCount();
-let currentItems = getSet([], visibleCount); // first set
+let visibleIndexes = getNextIndexes([], visibleCount); // first set
 
-function rendering(allItems) {
-   ul.innerHTML = '';
-   allItems.forEach(card => {
-      const pet = pets[card];
-      const item = generateCard(pet);
-      ul.appendChild(item);
-   })
+function renderSlider(indexes) {
+   const petsForRender = indexes.map(index => pets[index]);
+   render(ul, petsForRender);
 };
 
-rendering(currentItems);
+renderSlider(visibleIndexes);
 
 function getCardMetrics() {
   const card = ul.firstElementChild;
@@ -69,18 +48,18 @@ function getStep() {
 // moving left/right
 let isAnimating = false;
 
-function moving(dir = 1) {
+function slide(dir = 1) {
   if (isAnimating) return;
   isAnimating = true;
 
   const step = getStep();
   if (!step) { isAnimating = false; return; }
 
-  const newItems = getSet(currentItems, visibleCount);
+  const newItems = getNextIndexes(visibleIndexes, visibleCount);
 
   // new items(cards)
   const frag = document.createDocumentFragment();
-  newItems.forEach(idx => frag.appendChild(generateCard(pets[idx])));
+  newItems.forEach(idx => frag.appendChild(generatePetCard(pets[idx])));
 
   // preparing DOM
   if (dir === 1) {
@@ -115,13 +94,13 @@ function moving(dir = 1) {
     ul.offsetHeight; // you know already :)
     ul.style.transition = 'transform 500ms ease';
 
-    currentItems = newItems;
+    visibleIndexes = newItems;
     isAnimating = false;
   }, { once: true });
 }
 
-rightBtn.addEventListener('click', () => moving(1));
-leftBtn.addEventListener('click', () => moving(-1));
+rightBtn.addEventListener('click', () => slide(1));
+leftBtn.addEventListener('click', () => slide(-1));
 
 
 
