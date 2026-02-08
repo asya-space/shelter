@@ -110,7 +110,8 @@ body {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-    backdrop-filter: brightness(70%);
+    -webkit-backdrop-filter: brightness(70%);
+            backdrop-filter: brightness(70%);
     transition: all 0.3s ease-in-out;
   }
 }
@@ -207,7 +208,8 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  text-decoration: underline dotted; /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -524,6 +526,7 @@ template {
     height: 100vh;
   }
   .nav__list__item {
+    width: -moz-fit-content;
     width: fit-content;
   }
   .nav__list__item__link {
@@ -609,6 +612,7 @@ template {
 .notonly__link {
   display: block;
   padding: 15px 45px;
+  max-width: -moz-fit-content;
   max-width: fit-content;
   min-height: 52px;
   background-color: #F1CDB3;
@@ -788,6 +792,7 @@ template {
   position: relative;
   margin: 0 auto;
   margin-bottom: 60px;
+  /* cdcdcd - fill for inactive arrow */
 }
 
 .our .slider__carousel {
@@ -802,10 +807,6 @@ template {
   will-change: transform;
 }
 
-.our .slider__list__item:not(:last-child) {
-  margin-right: 80px;
-}
-
 .our .slider__list__item {
   max-width: 270px;
   height: 480px;
@@ -818,6 +819,10 @@ template {
   transition: all 0.3s ease-in-out;
 }
 
+.our .slider__list__item:not(:last-child) {
+  margin-right: 80px;
+}
+
 .our .slider__list__item:hover {
   transform: scale(1.1);
 }
@@ -828,6 +833,8 @@ template {
   background-color: #fafafa;
   border-top-right-radius: 9px;
   border-top-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  border-bottom-left-radius: 9px;
   text-align: center;
   transition: all 0.3s ease-in-out;
 }
@@ -838,6 +845,8 @@ template {
 }
 
 .our .slider__list__item__card__pic__img {
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
   margin-bottom: 30px;
 }
 
@@ -913,10 +922,6 @@ template {
   height: 52px;
   border: 1px solid #F1CDB3;
   border-radius: 50%;
-}
-
-.our .slider {
-  /* cdcdcd - fill for inactive arrow */
 }
 
 .our .slider__btn {
@@ -1378,7 +1383,7 @@ template {
 }
 html {
   scroll-behavior: smooth !important;
-  user-select: none;
-}
-
-/*# sourceMappingURL=style.css.map */
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}/*# sourceMappingURL=style.css.map */
