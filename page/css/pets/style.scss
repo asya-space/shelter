@@ -3,8 +3,9 @@
 @use '../_mixins/mixins';
 @use '../_body/body';
 @use '../_nav/nav';
-@use '../_slider/slider';
+/*@use '../_slider/slider';*/
 @use "../_footer/footer";
+
 
 html {
   scroll-behavior: smooth;
@@ -89,101 +90,171 @@ body {
 }
 
 .our {
+  max-width: 100%;
+  background-color: vars.$slider-back;
+  background-size: 100%;
+
   .container {
-    padding-right: 40px;
-    padding-left: 40px;
-    padding-bottom: 95px;
+    text-align: center;
+    padding: 80px 40px 95px;
   }
 
-  .slider {
-    margin-bottom: 0;
-    max-width: 1200px;
+  &__title {
+    margin: vars.$aut;
+    margin-bottom: vars.$six;
+    max-width: 400px;
+    @include mixins.main();
+    letter-spacing: 2px;
+  }
+}
 
-    &__list > * {
-      min-width: vars.$card;
-      overflow-x: hidden;
-    }
+  /* PAGINATION */
 
-    &__list {
-      margin: 0;
-      margin-bottom: 65px;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: vars.$mid;
-      column-gap: 40px;
+.pagination {
+  position: relative;
+  margin: vars.$aut;
+  margin-bottom: 0;
+  max-width: 1200px;
 
-      &__item:not(:last-child) {
-        margin-right: 0;
-      }
+  &__list > * {
+    min-width: vars.$card;
+    overflow-x: hidden;
+  }
 
-      &__item {
+  &__list {
+    margin: 0;
+    margin-bottom: 65px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: vars.$mid;
+    column-gap: 40px;
+
+    &__item {
+      max-width: vars.$card;
+      height: 480px;
+      display: vars.$flx !important;
+      flex: 00 auto;
+      flex-direction: vars.$col;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      border-radius: vars.$radius;
+      transition: all .3s ease-in-out;
+
+        &:not(:last-child) {
+          margin-right: 0;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+      &__card {
+        max-width: vars.$card;
+        min-height: 435px;
+        background-color: vars.$fa;
         border-radius: vars.$radius;
+        text-align: center;
         transition: all .3s ease-in-out;
 
-          &:hover {
-            background-color: #F4F2F2;
-            box-shadow: 1px 1px 3px vars.$grey;
-          }
+        &__btn {
+          max-width: vars.$full;
+        }
 
-        &__card {
-          &__btn {
+        &:hover {
+          background-color: #F4F2F2;
+          box-shadow: 1px 1px 3px vars.$grey;
+        }
+
+        &__pic {
+          &__img {
+            margin-bottom: vars.$mid;
             max-width: vars.$full;
+            border-top-right-radius: vars.$radius;
+            border-top-left-radius: vars.$radius;
+            /*@media (max-width: 768px) {
+              margin-bottom: 25px;
+            }*/
+          }
+        }
+
+        &__name {
+          margin-bottom: vars.$mid;
+          @include mixins.temp();
+          letter-spacing: 1px;
+        }
+          
+        &__link {
+          display: inline-block;
+          padding: vars.$pad;
+          max-width: 187px;
+          border-radius: vars.$hund;
+          border: 1px solid vars.$primary;
+          cursor: pointer;
+          transition: all .3s ease-in-out;
+          @include mixins.basic;
+          font-family: vars.$lora;
+          font-size: 17px;
+          line-height: 22px;
+          color: vars.$black;
+
+          &:hover {
+            background-color: vars.$hov;
           }
 
-          &__pic {
-            &__img {
-              max-width: vars.$full;
-            }
+          &:active {
+            background-color: vars.$primary;
           }
         }
       }
     }
+  }
 
-    &__controls {
-      display: vars.$flx;
-      justify-content: vars.$ctr;
+  &__controls {
+    display: vars.$flx;
+    justify-content: vars.$ctr;
   
-      &__digit {
-        @include mixins.controls();
-        @include mixins.temp();
-        margin-right: vars.$offset;
-        background-color: vars.$primary;
-      }
+    &__digit {
+      @include mixins.controls();
+      @include mixins.temp();
+      margin-right: vars.$offset;
+      background-color: vars.$primary;
+    }
 
-      &__arrow {
-        @include mixins.controls();
-        transition: all .3s ease-in-out;
-      }
+    &__arrow {
+      @include mixins.controls();
+      transition: all .3s ease-in-out;
+    }
 
-      &__prev,
-      &__next {
-        margin-right: 15px;
-      }
+    &__prev,
+    &__next {
+      margin-right: 15px;
+    }
 
-      &__double-prev {
-        margin-right: vars.$offset;
-        border-color: vars.$grey;
-      }
-      &__prev {
-        border-color: vars.$grey;
-      }
+    &__double-prev {
+      margin-right: vars.$offset;
+      border-color: vars.$grey;
+    }
 
-      &__next,
-      &__double-next {
-        border-color: vars.$primary;
-      }
+    &__prev {
+      border-color: vars.$grey;
+    }
 
-      &__next:hover,
-      &__double-next:hover {
-        background-color: vars.$hov;
-        cursor: pointer;
-      }
+    &__next,
+    &__double-next {
+      border-color: vars.$primary;
+    }
 
-      &__next:active,
-      &__double-next:active {
-        background-color: vars.$primary;
-      }
+    &__next:hover,
+    &__double-next:hover {
+      background-color: vars.$hov;
+      cursor: pointer;
+    }
+
+    &__next:active,
+    &__double-next:active {
+      background-color: vars.$primary;
     }
   }
 }
@@ -196,7 +267,7 @@ body {
 
 @media (min-width: 768px) and (max-width: 1220px) {
   .our {
-    .slider {
+    .pagination {
       &__list {
         grid-template-columns: repeat(2, minmax(vars.$card, 1fr));
       }
@@ -250,7 +321,7 @@ body {
       margin-bottom: 30px;
     }
 
-    .slider {
+    .pagination {
       &__list {
         #scarlet, 
         #freddie {
@@ -259,7 +330,7 @@ body {
       }
     }
 
-    .slider__controls {
+    .pagination__controls {
       margin-top: -30px;
     }  
   }
@@ -284,7 +355,7 @@ body {
       padding: 42px 25px 42px;
     }
 
-    .slider {
+    .pagination {
       max-width: 290px;
 
       &__list {
