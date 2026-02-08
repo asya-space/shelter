@@ -5,20 +5,6 @@ import { render } from './utils/render.js';
 
 const ul = document.querySelector('.pets__list');
 let pets48 = [];
-/*function shuffle(arr) {
-    return arr.map(item => {
-        return {
-            item: item,
-            sort: Math.random()
-        }
-    })
-    .sort((a, b) => {
-        return a.sort - b.sort;
-    })
-    .map(obj => {
-        return obj.item;
-    });
-}*/
 
 function createPets48(pets) {
    let result = [];
