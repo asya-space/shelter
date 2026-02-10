@@ -62,3 +62,6 @@ function goLast() {
     renderPage();
 }
 
+const nextBtn = document.querySelector('.pagination__controls__next');
+nextBtn.addEventListener('click', goNext);
+
