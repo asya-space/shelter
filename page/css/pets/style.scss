@@ -224,7 +224,17 @@ body {
 
     &__arrow {
       @include mixins.controls();
+      border-color: vars.$primary;
       transition: all .3s ease-in-out;
+      cursor: pointer;
+
+      &:hover {
+        background-color: vars.$hov;
+      }
+
+      &:active {
+        background-color: vars.$primary;
+      }
     }
 
     &__prev,
@@ -234,29 +244,35 @@ body {
 
     &__double-prev {
       margin-right: vars.$offset;
+    }
+
+    /* if disabled */
+
+    .disabled,
+    .disabled:hover,
+    .disabled:active {
       border-color: vars.$grey;
+      background-color: transparent;
+      cursor: default;
     }
 
-    &__prev {
-      border-color: vars.$grey;
-    }
-
-    &__next,
-    &__double-next {
-      border-color: vars.$primary;
-    }
-
-    &__next:hover,
-    &__double-next:hover {
-      background-color: vars.$hov;
-      cursor: pointer;
-    }
-
-    &__next:active,
-    &__double-next:active {
-      background-color: vars.$primary;
+    .disabled svg path {
+      fill: vars.$grey;
     }
   }
+}
+/* end disabled */
+
+/* animate pagination */
+.pets__list {
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.pets__list.fade-out {
+  opacity: 0;
+  transform: translateX(20px);
 }
 
 .footer {
