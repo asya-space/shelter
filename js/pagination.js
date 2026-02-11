@@ -1,6 +1,5 @@
 import { pets } from './data/pets.js';
 import { shuffle } from './utils/shuffle.js';
-import { generatePetCard } from './components/generateCard.js';
 import { render } from './utils/render.js';
 
 const ul = document.querySelector('.pets__list');
@@ -32,36 +31,81 @@ console.log('pets48 length:', pets48.length);
 
 function renderPage() {
     const petsForPage = getPageSlice();
-    render(ul, petsForPage);
+    ul.classList.add('fade-out');
+    setTimeout(() => {
+        render(ul, petsForPage);
+        ul.classList.remove('fade-out');
+    }, 200);
     console.log('Page:', currentPage);
     console.log(petsForPage);
 }
 renderPage();
 
+const digit = document.querySelector('.pagination__controls__digit');
+let currentNum = parseInt(digit.innerText);
+
 function goNext() {
     if(currentPage >= totalPages) return;
     currentPage++;
+    currentNum++;
+    digit.innerText = currentNum;
+    toStart.classList.remove('disabled');
+    prevBtn.classList.remove('disabled');
+    if(currentPage === totalPages) {
+        toEnd.classList.add('disabled');
+        nextBtn.classList.add('disabled');
+    }
     renderPage();
 }
 
 function goPrev() {
     if(currentPage <= 1) return;
     currentPage--;
+    currentNum--;
+    digit.innerText = currentNum;
+    if(currentPage === 1) {
+        toStart.classList.add('disabled');
+        prevBtn.classList.add('disabled');
+    } else if(currentPage < totalPages) {
+        toEnd.classList.remove('disabled');
+        nextBtn.classList.remove('disabled');
+    }
     renderPage();
 }
 
 function goFirst() {
     if(currentPage === 1) return;
     currentPage = 1;
+    currentNum = 1;
+    digit.innerHTML = currentNum;
+    toStart.classList.add('disabled');
+    prevBtn.classList.add('disabled');
+    toEnd.classList.remove('disabled');
+    nextBtn.classList.remove('disabled');
     renderPage();
 }
 
 function goLast() {
     if(currentPage === totalPages) return;
+    toEnd.classList.add('disabled');
+    nextBtn.classList.add('disabled');
+    toStart.classList.remove('disabled');
+    prevBtn.classList.remove('disabled');
     currentPage = totalPages;
+    currentNum = totalPages;
+    digit.innerHTML = currentNum;
     renderPage();
 }
 
 const nextBtn = document.querySelector('.pagination__controls__next');
 nextBtn.addEventListener('click', goNext);
+
+const prevBtn = document.querySelector('.pagination__controls__prev');
+prevBtn.addEventListener('click', goPrev);
+
+const toStart = document.querySelector('.pagination__controls__double-prev');
+toStart.addEventListener('click', goFirst);
+
+const toEnd = document.querySelector('.pagination__controls__double-next');
+toEnd.addEventListener('click', goLast);
 
