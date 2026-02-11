@@ -108,6 +108,7 @@ dist
 *.min.css
 *.css.map
 _*
+*.css
 
 # optional settings
 .linthtmlrc.json
