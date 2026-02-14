@@ -3,7 +3,6 @@
 @use '../_mixins/mixins';
 @use '../_body/body';
 @use '../_nav/nav';
-/*@use '../_slider/slider';*/
 @use "../_footer/footer";
 
 
@@ -283,6 +282,10 @@ body {
 
 @media (min-width: 768px) and (max-width: 1220px) {
   .our {
+    .container {
+      max-width: 768px;
+    }
+
     .pagination {
       &__list {
         grid-template-columns: repeat(2, minmax(vars.$card, 1fr));
@@ -337,13 +340,8 @@ body {
       margin-bottom: 30px;
     }
 
-    .pagination {
-      &__list {
-        #scarlet, 
-        #freddie {
-          display: none !important;
-        }
-      }
+    .pagination__list {
+      grid-template-columns: repeat(2, minmax(vars.$card, 1fr));
     }
 
     .pagination__controls {
@@ -365,7 +363,7 @@ body {
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 661px) {
   .our {
     .container {
       padding: 42px 25px 42px;
@@ -404,6 +402,7 @@ body {
 
   .footer {
     .container {
+      max-width: 320px;
       padding: 30px 35px;
       flex-direction: vars.$col;
       justify-content: flex-start;
