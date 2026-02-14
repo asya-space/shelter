@@ -99,8 +99,27 @@ function slide(dir = 1) {
   }, { once: true });
 }
 
+function changeArrowsProperty() {
+  const div = document.createElement('div');
+  const carousel = document.querySelector('.slider__carousel');
+
+  if(window.innerWidth < 720) {
+    div.classList.add('slider__buttons');
+    div.appendChild(leftBtn);
+    div.appendChild(rightBtn);
+    carousel.appendChild(div);
+
+  } else if(window.innerWidth > 720) {
+    div.classList.remove('slider__buttons');
+    div.remove();
+    carousel.appendChild(leftBtn);
+    carousel.appendChild(rightBtn);
+  }
+}
+
 rightBtn.addEventListener('click', () => slide(1));
 leftBtn.addEventListener('click', () => slide(-1));
+window.addEventListener('resize', changeArrowsProperty);
 
 
 
