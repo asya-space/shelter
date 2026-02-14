@@ -25,10 +25,6 @@ function getPageSlice() {
     return pets48.slice(start, end);
 }
 
-console.log('pets48 created:', pets48);
-console.log('pets48 length:', pets48.length);
-
-
 function renderPage() {
     const petsForPage = getPageSlice();
     ul.classList.add('fade-out');
@@ -36,8 +32,6 @@ function renderPage() {
         render(ul, petsForPage);
         ul.classList.remove('fade-out');
     }, 200);
-    console.log('Page:', currentPage);
-    console.log(petsForPage);
 }
 renderPage();
 
@@ -96,6 +90,23 @@ function goLast() {
     digit.innerHTML = currentNum;
     renderPage();
 }
+
+function updateViewByResize() {
+    if(window.innerWidth >= 1280) {
+        itemsPerPage = 8;
+    } else if(window.innerWidth >= 768 || window.innerWidth >= 661) {
+        itemsPerPage = 6;
+    } else {
+        itemsPerPage = 3;
+    }
+    totalPages = Math.ceil(pets48.length / itemsPerPage);
+    if(currentPage > totalPages) {
+        currentPage = totalPages;
+    }
+    renderPage();
+}
+
+window.addEventListener('resize', updateViewByResize);
 
 const nextBtn = document.querySelector('.pagination__controls__next');
 nextBtn.addEventListener('click', goNext);
