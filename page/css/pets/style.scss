@@ -24,7 +24,7 @@ body {
   }
 
   &__link {
-    color: #545454;
+    color: #5E5D5D;
     }
 
   &__txt {
@@ -135,8 +135,8 @@ body {
       display: vars.$flx !important;
       flex: 00 auto;
       flex-direction: vars.$col;
-      justify-content: center;
-      align-items: center;
+      justify-content: vars.$ctr;
+      align-items: vars.$ctr;
       cursor: pointer;
       border-radius: vars.$radius;
       transition: all .3s ease-in-out;
@@ -154,7 +154,7 @@ body {
         min-height: 435px;
         background-color: vars.$fa;
         border-radius: vars.$radius;
-        text-align: center;
+        text-align: vars.$ctr;
         transition: all .3s ease-in-out;
 
         &__btn {
@@ -163,7 +163,7 @@ body {
 
         &:hover {
           background-color: #F4F2F2;
-          box-shadow: 1px 1px 3px vars.$grey;
+          box-shadow: 1px 1px 3px vars.$active;
         }
 
         &__pic {
@@ -172,9 +172,10 @@ body {
             max-width: vars.$full;
             border-top-right-radius: vars.$radius;
             border-top-left-radius: vars.$radius;
-            /*@media (max-width: 768px) {
+            transition: all .3s ease-in-out;
+            @media (max-width: 768px) {
               margin-bottom: 25px;
-            }*/
+            }
           }
         }
 
@@ -188,7 +189,7 @@ body {
           display: inline-block;
           padding: vars.$pad;
           max-width: 187px;
-          border-radius: vars.$hund;
+          border-radius: vars.$radius;
           border: 1px solid vars.$primary;
           cursor: pointer;
           transition: all .3s ease-in-out;
@@ -203,9 +204,13 @@ body {
           }
 
           &:active {
-            background-color: vars.$primary;
+            background-color: vars.$active;
           }
         }
+      }
+
+      &__card:hover img {
+        background-color: vars.$grey;
       }
     }
   }
@@ -228,11 +233,11 @@ body {
       cursor: pointer;
 
       &:hover {
-        background-color: vars.$hov;
+        background-color: vars.$primary;
       }
 
       &:active {
-        background-color: vars.$primary;
+        background-color: vars.$active;
       }
     }
 
@@ -319,7 +324,7 @@ body {
   .burger {
     z-index: 2;
     &__line {
-      background-color: #545454;
+      background-color: vars.$primary;
     }
   }
 
