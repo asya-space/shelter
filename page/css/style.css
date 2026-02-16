@@ -1318,7 +1318,7 @@ template {
 .footer .container {
   padding: 60px 40px 40px 40px;
   display: flex;
-  background: 96% 98% no-repeat url("../assets/img/footer-puppy.png");
+  background: 96% 98% no-repeat url("/assets/img/footer-cat.png");
 }
 
 .footer__main {

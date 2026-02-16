@@ -560,7 +560,7 @@ body {
 .footer .container {
   padding: 60px 40px 40px 40px;
   display: flex;
-  background: 96% 98% no-repeat url("../assets/img/footer-puppy.png");
+  background: 96% 98% no-repeat url("/assets/img/footer-cat.png");
 }
 .footer__main {
   margin-bottom: 35px;
@@ -908,7 +908,7 @@ body {
 }
 
 .footer .container {
-  background: 96% 98% no-repeat url("../../assets/img/footer-puppy.png");
+  background: 96% 98% no-repeat url("/assets/img/footer-cat.png");
 }
 
 @media (min-width: 768px) and (max-width: 1220px) {
