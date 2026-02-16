@@ -802,10 +802,6 @@ body {
   letter-spacing: 1px;
 }
 
-.help__list__item__title:hover {
-  outline-color: #C2C0C0;
-}
-
 .help__list .inner {
   display: flex;
   flex-direction: column;
