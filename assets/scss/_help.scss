@@ -46,10 +46,6 @@
         transition: all .3s ease-in-out;
         @include mixins.temp();
         letter-spacing: 1px;
-
-        &:hover {
-          outline-color: vars.$grey;
-        }
       }
     }
     
