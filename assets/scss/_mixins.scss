@@ -1,0 +1,69 @@
+@use '_vars';
+
+/* basic fonts */
+@mixin basic {
+  font-weight: vars.$regular;
+  font-style: vars.$norm;
+}
+
+@mixin main {
+  font-family: vars.$lora;
+  font-weight: vars.$regular;
+  font-size: 35px;
+  font-style: vars.$norm;
+  line-height: 45px;
+  color: vars.$dark;
+}
+
+@mixin temp {
+  font-family: vars.$lora;
+  font-weight: vars.$regular;
+  font-style: vars.$norm;
+  font-size: vars.$offset;
+  line-height: 22px;
+  color: vars.$dark;
+}
+
+@mixin controls {
+  display: vars.$flx;
+  justify-content: vars.$ctr;
+  align-items: vars.$ctr;
+  border: 1px solid transparent;
+  border-radius: vars.$hund;
+  width: 52px;
+  height: 52px;
+}
+
+@mixin minimal {
+  text-align: vars.$ctr;
+  font-size: vars.$std;
+  line-height: vars.$lineHeight;
+}
+
+@mixin navList {
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+@mixin navItem {
+  width: fit-content;
+}
+
+@mixin navLink {
+  font-size: 30px;
+  color: #CDCDCD;
+  transition: transform 0.3s ease-in-out;
+}
+
+@mixin lock {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  backdrop-filter: brightness(70%);
+  transition: all .3s ease-in-out;
+}

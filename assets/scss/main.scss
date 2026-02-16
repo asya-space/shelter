@@ -1,0 +1,15 @@
+@use 'sass:meta';
+@use '_body';
+
+@include meta.load-css('_nav');
+@include meta.load-css('_notonly');
+@include meta.load-css('_about');
+@include meta.load-css('_slider');
+@include meta.load-css('_help');
+@include meta.load-css('_donat');
+@include meta.load-css('_footer');
+
+html {
+  scroll-behavior: smooth !important;
+  user-select: none;
+}

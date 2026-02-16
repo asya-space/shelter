@@ -1,0 +1,293 @@
+@use '_vars';
+@use '_mixins';
+
+.our {
+  max-width: 100%;
+  background-color: vars.$slider-back;
+  background-size: 100%;
+
+  .container {
+    max-width: 1280px;
+    text-align: center;
+    padding-top: 80px;
+    padding-bottom: 95px;
+  }
+
+  &__title {
+    margin: vars.$aut;
+    margin-bottom: vars.$six;
+    max-width: 400px;
+    @include mixins.main();
+    letter-spacing: 2px;
+  }
+
+  .slider {
+    position: relative;
+    margin: vars.$aut;
+    margin-bottom: vars.$six;
+
+    &__carousel {
+      margin: vars.$aut;
+      max-width: 990px;
+      overflow: hidden;
+    }
+
+    &__list {
+      display: vars.$flx;
+      transition: transform 350ms ease;
+      will-change: transform;
+
+      &__item {
+        max-width: vars.$card;
+        height: 480px;
+        display: vars.$flx !important;
+        flex: 00 auto;
+        flex-direction: vars.$col;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        &:not(:last-child) {
+          margin-right: 80px;
+        }
+
+        &:hover {
+          transform: scale(1.1);
+        }
+
+        &__card {
+          position: relative;
+          max-width: vars.$card;
+          min-height: 435px;
+          background-color: vars.$fa;
+          border-radius: vars.$radius;
+          text-align: center;
+          box-shadow: 1px 1px 3px vars.$grey;
+          transition: all .3s ease-in-out;
+
+          &:hover {
+            background-color: #F4F2F2;
+            box-shadow: 1px 1px 3px vars.$active;
+          }
+
+          &__pic {
+            &__img {
+              border-top-right-radius: vars.$radius;
+              border-top-left-radius: vars.$radius;
+              margin-bottom: vars.$mid;
+              transition: all .3s ease-in-out;
+              @media (max-width: 768px) {
+                margin-bottom: 25px;
+              }
+            }
+          }
+
+          &__name {
+            margin-bottom: vars.$mid;
+            @include mixins.temp();
+            letter-spacing: 1px;
+          }
+
+          &__link {
+            display: inline-block;
+            padding: vars.$pad;
+            max-width: 187px;
+            border-radius: vars.$radius;
+            border: 1px solid vars.$primary;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            @include mixins.basic;
+            font-family: vars.$lora;
+            font-size: 17px;
+            line-height: 22px;
+            color: vars.$black;
+          }
+
+          &__link:hover {
+            background-color: vars.$hov;
+          }
+
+          &__link:active {
+            background-color: vars.$active;
+          }
+        }
+
+        &__card:hover img {
+          background-color: vars.$grey;
+        }
+      }
+    }
+
+    &__prev, 
+    &__next {
+      position: absolute;
+      top: 45%;
+      transition: all .3s ease-in-out;
+    }
+
+    &__prev {
+      left: 0;
+    }
+
+    &__next {
+      right: 0;
+    }
+
+    &__prev:hover,
+    &__next:hover {
+      cursor: pointer;
+      background-color: vars.$hov;
+      border-radius: vars.$hund;
+    }
+
+    &__prev:active,
+    &__next:active {
+      background-color: vars.$active;
+    }
+
+    &__arrow {
+      display: vars.$flx;
+      justify-content: center;
+      align-items: center;
+      width: 52px;
+      height: 52px;
+      border: 1px solid vars.$primary;
+      border-radius: vars.$half;
+    }
+
+    &__btn {
+      max-width: 245px;
+      min-height: 52px;
+      padding: 15px 30px;
+      background-color: vars.$primary;
+    }
+
+    .slider__list__item.template {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .our {
+    .container {
+      max-width: 900px; 
+    }
+
+    .slider {
+      &__carousel {
+        max-width: 600px;
+      }
+
+        &__list__item {
+          &:not(:last-child) {
+            margin-right: 40px;
+          }
+        }
+
+        &__prev {
+          left: -25px;
+        }
+  
+        &__next {
+          right: -25px;
+        }
+      }
+    }
+  }
+
+@media (max-width: 768px) {
+  .our {
+    .container { 
+      padding-top: 85px;
+      max-width: 768px;
+    }
+    
+    &__title {
+      letter-spacing: 2px;
+    }
+  
+    &__span {
+      display: inline-block;
+    }
+  
+    &__btn {
+      padding: 15px 30px;
+      background-color: vars.$primary;
+      border-radius: vars.$hund;
+      transition: all .3s ease-in-out;
+      &__link {
+        @include mixins.temp();
+      }
+    }
+
+    &__btn:hover {
+      background-color: vars.$hov;
+    }
+
+    &__btn:active {
+      background-color: vars.$primary;
+    }
+
+    .slider {
+      &__carousel {
+        max-width: 580px;
+      }
+      &__prev,
+      &__next {
+        top: 44%;
+      }
+    }
+  }
+}
+
+@media (320px <= width <= 720px) {
+  .our {
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      max-width: 400px;
+      padding-top: 42px;
+      padding-bottom: 42px;
+    }
+
+    &__title {
+      @include mixins.minimal();
+      margin-bottom: 42px;
+    }
+
+    .slider {
+      margin-bottom: 6.5rem;
+      &__carousel {
+        max-width: 320px;
+      } 
+      &__list {
+        max-width: 270px;
+        &__item {
+          &:not(:last-child) {
+            margin-right: 40px;
+          }
+        }
+      }
+
+      &__prev,
+      &__next {
+        position: static;
+        width: 52px;
+        border-radius: 100%;
+      }
+
+      &__buttons {
+        margin: 0 auto;
+        max-width: 184px;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+
