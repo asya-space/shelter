@@ -107,7 +107,6 @@ dist
 # general settings
 *.min.css
 *.css.map
-_*
 
 
 # optional settings
