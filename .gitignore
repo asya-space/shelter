@@ -109,6 +109,7 @@ dist
 *.css.map
 _*
 
+
 # optional settings
 .linthtmlrc.json
 package.json
