@@ -70,7 +70,7 @@
                     <div class="slider">
                         <div class="slider__carousel">
                             <ul class="slider__list">
-                                <li class="slider__list__item template">
+                                <li class="slider__list__item template" data-id="#">
                                     <div class="slider__list__item__card ">
                                         <picture class="slider__list__item__card__pic">
                                         <source srcset="" type="image/png" width="270" height="270">
@@ -211,24 +211,9 @@
                 </div>
             </div>
         </footer>
-        <div class="modal" id="modal-root">
-            <picture class="modal__pic">
-                <source srcset="#" type="img/png" width="270" height="270">
-                <img src="#" width="270" height="270" alt="pet">
-            </picture>
-            <div class="modal__desc">
-                <h2 class="modal__desc__title"><!-- name --></h2>
-                <span class="modal__desc__breed"><!-- breed --></span>
-                <p class="modal__desc__txt"><!-- main text--></p>
-                <ul class="modal__desc__list">
-                    <li class="modal__desc__list__item"><!-- age--></li>
-                    <li class="modal__desc__list__item"><!-- Inoculations --></li>
-                    <li class="modal__desc__list__item"><!-- Diseases --></li>
-                    <li class="modal__desc__list__item"><!-- Parasites--></li>
-                </ul>
-            </div>
-        </div>
+        <div id="modal-root"></div>
         <script src="js/index.js"></script>
         <script type="module" src="js/slider.js"></script>
+        <script type="module" src="js/components/modal.js"></script>
     </body>
 </html>
