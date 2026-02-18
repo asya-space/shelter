@@ -3,6 +3,7 @@
 @use '_body';
 @use '_nav';
 @use '_footer';
+@use '_modal';
 
 
 html {
@@ -184,7 +185,7 @@ body {
           letter-spacing: 1px;
         }
           
-        &__link {
+        &__btn {
           display: inline-block;
           padding: vars.$pad;
           max-width: 187px;
@@ -395,11 +396,6 @@ body {
         &__digit {
           margin-right: 10px;
         }
-      }
-
-      #woody,
-      #jennifer {
-        display: grid !important;
       }
     }
   }
