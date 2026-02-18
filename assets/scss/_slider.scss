@@ -67,7 +67,7 @@
           transition: all .3s ease-in-out;
 
           &:hover {
-            background-color: #F4F2F2;
+            background-color: vars.$f4;
             box-shadow: 1px 1px 3px vars.$active;
           }
 
@@ -89,7 +89,7 @@
             letter-spacing: 1px;
           }
 
-          &__link {
+          &__btn {
             display: inline-block;
             padding: vars.$pad;
             max-width: 187px;
@@ -104,11 +104,11 @@
             color: vars.$black;
           }
 
-          &__link:hover {
+          &__btn:hover {
             background-color: vars.$hov;
           }
 
-          &__link:active {
+          &__btn:active {
             background-color: vars.$active;
           }
         }
