@@ -3,7 +3,7 @@ import { renderPetModal } from './renderModal.js';
 import { openModal } from './modalCore.js'; 
 
 document.addEventListener('click', (elem) => {
-  const item = elem.target.closest('.slider__list__item');
+  const item = elem.target.closest('.template');
   if (!item) return;
 
   const id = item.dataset.id;
