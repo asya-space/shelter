@@ -28,8 +28,22 @@
 
     &__btn {
         position: absolute;
-        top: 0;
-        right: 0;
+        top: -52px;
+        right: -52px;
+        width: 52px;
+        height: 52px;
+        border: 2px solid vars.$primary;
+        border-radius: vars.$hund;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: vars.$hov;
+        }
+
+        &:active {
+            background-color: #CC9767;
+        }
     }
 
     &__pic {
