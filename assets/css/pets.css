@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* margin, padding */
 /* reset default values */
 /* display values */
@@ -328,6 +329,86 @@ body {
     margin-bottom: 30px;
   }
 }
+.modal-overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.popup .container {
+  padding: 15px;
+  position: relative;
+  max-width: 900px;
+  max-height: 500px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 9px;
+  background-color: #F4F2F2;
+}
+.popup__btn {
+  position: absolute;
+  top: -52px;
+  right: -52px;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #D7BDA6;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.popup__btn:hover {
+  background-color: #E1C19B;
+}
+.popup__btn:active {
+  background-color: #CC9767;
+}
+.popup__pic {
+  margin-right: 25px;
+  margin-top: auto;
+}
+.popup__info {
+  max-width: 260px;
+  align-items: center;
+}
+.popup__info__title {
+  margin-bottom: 10px;
+  font-size: 35px;
+  font-weight: 400;
+}
+.popup__info__breed {
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 400;
+}
+.popup__info__desc {
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 100%;
+  letter-spacing: 6%;
+}
+.popup__info__list {
+  padding-left: 10px;
+}
+.popup__info__list__item {
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+.popup__info__list__item::marker {
+  content: "• ";
+  color: #D7BDA6;
+}
+.popup__info__list__item__span {
+  font-weight: 700;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-user-select: none;
@@ -501,7 +582,7 @@ body {
   color: #5E5D5D;
   letter-spacing: 1px;
 }
-.pagination__list__item__card__link {
+.pagination__list__item__card__btn {
   display: inline-block;
   padding: 15px 45px;
   max-width: 187px;
@@ -516,10 +597,10 @@ body {
   line-height: 22px;
   color: #212020;
 }
-.pagination__list__item__card__link:hover {
+.pagination__list__item__card__btn:hover {
   background-color: #E1C19B;
 }
-.pagination__list__item__card__link:active {
+.pagination__list__item__card__btn:active {
   background-color: #CC9767;
 }
 .pagination__list__item__card:hover img {
@@ -694,10 +775,6 @@ body {
   }
   .our .pagination__controls__digit {
     margin-right: 10px;
-  }
-  .our .pagination #woody,
-  .our .pagination #jennifer {
-    display: grid !important;
   }
   .footer .container {
     max-width: 320px;
