@@ -1125,8 +1125,22 @@ body {
 
 .popup__btn {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: -52px;
+  right: -52px;
+  width: 52px;
+  height: 52px;
+  border: 2px solid #D7BDA6;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup__btn:hover {
+  background-color: #E1C19B;
+}
+
+.popup__btn:active {
+  background-color: #CC9767;
 }
 
 .popup__pic {
