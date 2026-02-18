@@ -8,6 +8,8 @@
 @include meta.load-css('_help');
 @include meta.load-css('_donat');
 @include meta.load-css('_footer');
+@include meta.load-css('_modal');
+
 
 html {
   scroll-behavior: smooth !important;
