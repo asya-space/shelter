@@ -89,6 +89,7 @@ body {
 }
 
 .our {
+  @include mixins.loadingBar();
   max-width: 100%;
   background-color: vars.$slider-back;
   background-size: 100%;
@@ -96,6 +97,10 @@ body {
   .container {
     text-align: center;
     padding: 80px 40px 95px;
+    #page-loader {
+      top: 200px;
+      height: 78.3%;
+    }
   }
 
   &__title {
