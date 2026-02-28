@@ -2,6 +2,7 @@
 @use '_mixins';
 
 .our {
+  @include mixins.loadingBar();
   max-width: 100%;
   background-color: vars.$slider-back;
   background-size: 100%;
@@ -11,6 +12,9 @@
     text-align: center;
     padding-top: 80px;
     padding-bottom: 95px;
+    #page-loader {
+      height: 70%;
+    }
   }
 
   &__title {
