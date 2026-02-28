@@ -17,12 +17,12 @@
   }
 
   &__left {
-    margin-right: 160px;
-    max-width: 278px;
+    margin-right: 120px;
+    max-width: 400px;
   }
 
   &__right {
-    max-width: 302px;
+    max-width: 350px;
   }
 
   &__list {
@@ -51,6 +51,16 @@
   }
 }
 
+@media (max-width: 1126px) {
+  .footer {
+    &__right {
+      padding: 5px;
+      border-radius: vars.$radius;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .footer {
     .container {
@@ -60,21 +70,35 @@
       background-position: 50% 100%;
     }
 
+    &__right {
+      background-color: transparent;
+      padding: 0;
+    }
+
     &__left {
       margin-right: 60px;
     }
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 680px) {
   .footer {
     .container {
       padding: 30px 35px;
       flex-direction: vars.$col;
       justify-content: flex-start;
-      min-height: 57rem;
+      min-height: 40rem;
+      background-position: 98% 90%;
     }
 
+    &__left {
+      margin-bottom: vars.$offset;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .footer {
     &__main {
       @include mixins.minimal();
       margin-bottom: 45px;
