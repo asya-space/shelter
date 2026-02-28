@@ -62,8 +62,7 @@
   .notonly {
     &__txt {
       padding: 10px;
-      border-radius: 10px;
-      background-color: rgba(0, 0, 0, 0.5);
+      @include mixins.backShadow();
       transition: all 0.3s;
     }
   }
