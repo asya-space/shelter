@@ -9,8 +9,7 @@
 @include meta.load-css('_donat');
 @include meta.load-css('_footer');
 @include meta.load-css('_modal');
-
-
+@include meta.load-css('_cookies');
 
 html {
   scroll-behavior: smooth !important;

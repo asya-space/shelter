@@ -1,0 +1,30 @@
+@use '_vars';
+@use '_mixins';
+
+.cookie {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: fit-content;
+    height: fit-content;
+    padding: 20px;
+    border-radius: 9px;
+    background-color: vars.$black;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+
+    &__txt {
+      margin-bottom: 10px;
+      font-weight: vars.$regular;
+      font-family: vars.$merry;
+      color: vars.$fa;
+    }
+
+    &__buttons {
+      text-align: vars.$ctr;
+    }
+}
+
+.cookie--visible {
+  transform: translateY(0);
+}
