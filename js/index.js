@@ -1,8 +1,7 @@
 const burgerBtn = document.querySelector('.burger'),
       nav = document.getElementById('menu'),
       links = nav.querySelectorAll('.nav__list__item__link'),
-      body = document.querySelector('body'),
-      layer = document.createElement('div');
+      body = document.querySelector('body');
 let axisY = 0;
 
 function stopBody() {
