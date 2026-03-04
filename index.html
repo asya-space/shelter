@@ -7,8 +7,8 @@
         <link rel="icon" type="image/x-icon" href="assets/img/love.png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/main.css">
     </head>
     <body>
@@ -217,7 +217,17 @@
             </div>
         </footer>
         <div id="modal-root"></div>
+        <div class="cookie">
+            <p class="cookie__txt">We use cookies to understand how you use our website</p>
+            <p class="cookie__txt">Please, read our <a class="cookie__privacy" href="/privacy.html" target="_blank" rel="noreferrer noopener">Privacy Policy</p>
+            <div class="cookie__buttons">
+                <button class="cookie__btn" id="accept">Accept All</button>
+                <button class="cookie__btn" id="reject">Reject All</button>
+            </div>
+        </div>
+        <button id="change" class="cookie__change">Change your mind</button>
         <script src="js/index.js"></script>
+        <script type="module" src="js/cookies.js"></script>
         <script type="module" src="js/slider.js"></script>
         <script type="module" src="js/components/modalTriggers.js"></script>
         <script src="js/utils/loader.js"></script>
