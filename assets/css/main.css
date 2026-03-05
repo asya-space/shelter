@@ -301,15 +301,15 @@ body {
 .notonly__link {
   display: block;
   padding: 15px 45px;
-  max-width: -moz-fit-content;
-  max-width: fit-content;
   min-height: 52px;
-  background-color: #D7BDA6;
   border-radius: 9px;
   font-size: 17px;
   line-height: 22px;
-  color: #212020;
   letter-spacing: 2px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  background-color: #D7BDA6;
+  color: #212020;
   transition: all 0.3s ease-in-out;
 }
 
@@ -1271,32 +1271,105 @@ body {
 /* basic fonts */
 .cookie {
   position: fixed;
-  bottom: 10px;
+  bottom: 0;
   left: 10px;
   width: -moz-fit-content;
   width: fit-content;
   height: -moz-fit-content;
   height: fit-content;
-  padding: 20px;
-  border-radius: 9px;
-  background-color: #212020;
   transform: translateY(100%);
   transition: transform 0.3s ease-in-out;
 }
 
+.cookie .container {
+  margin-bottom: 10px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+  border-radius: 9px;
+  background-color: #212020;
+}
+
 .cookie__txt {
+  font-size: 16px;
   margin-bottom: 10px;
   font-weight: 400;
   font-family: "Raleway", serif;
   color: #F2EDED;
 }
 
+.cookie__txt__privacy {
+  color: #B7957F;
+  font-weight: 600;
+}
+
 .cookie__buttons {
+  font-size: 14px;
   text-align: center;
+  color: #212020;
+}
+
+.cookie__buttons__tap {
+  padding: 5px 10px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  font-family: "Lora", serif;
+  background-color: #F4F2F2;
+  border-radius: 3px;
+  max-width: fit-content;
+  background-color: #D7BDA6;
+  color: #212020;
+  transition: all 0.3s ease-in-out;
+}
+
+.cookie__buttons__tap:hover {
+  background-color: #E1C19B;
+}
+
+.cookie__buttons__tap:active {
+  background-color: #CC9767;
+}
+
+.cookie__buttons__tap:first-of-type {
+  margin-right: 20px;
+}
+
+.change__box {
+  position: fixed;
+  bottom: 0;
+  left: 10px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.change__box__btn {
+  background-color: #212020;
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-family: "Raleway", serif;
+  color: #F2EDED;
+  font-family: "Lora", serif;
+}
+
+#change:hover {
+  background-color: #363333;
+}
+
+#change:active {
+  background-color: #B7957F;
+  color: #212020;
+}
+
+.visible {
+  transform: translateY(0px);
 }
 
 .cookie--visible {
-  transform: translateY(0);
+  transform: translateY(0px);
 }
 
 html {
