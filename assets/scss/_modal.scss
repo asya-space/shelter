@@ -30,6 +30,7 @@
         position: absolute;
         top: -52px;
         right: -52px;
+        padding: 0;
         width: 52px;
         height: 52px;
         border: 2px solid vars.$primary;
@@ -43,6 +44,13 @@
 
         &:active {
             background-color: #CC9767;
+        }
+
+        &__close {
+            display: vars.$flx;
+            justify-content: vars.$ctr;
+            align-items: vars.$ctr;
+            align-self: vars.$ctr;
         }
     }
 
@@ -71,7 +79,7 @@
             font-weight: vars.$regular;
             font-size: 15px;
             line-height: 100%;
-            letter-spacing: 6%;
+            letter-spacing: 1px;
         }
 
         &__list {
@@ -89,6 +97,59 @@
                     font-weight: 700;
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .popup {
+        .container {
+            max-width: 630px;
+            max-height: 350px;
+        }
+
+        &__info {
+            &__title {
+                font-size: vars.$offset;
+            }
+
+            &__desc {
+                margin-bottom: vars.$ten;
+            }
+        }
+    }
+}
+
+@media (max-width: 680px) {
+    .popup {
+        .container {
+            flex-direction: vars.$col;
+            max-height: fit-content;
+        }
+
+        &__btn {
+            top: -30px;
+            right: -30px;
+            width: 30px;
+            height: 30px;
+        }
+
+        &__info {
+            &__list {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: 360px) {
+    .popup {
+        .container {
+            max-width: 240px;
+        }
+
+        &__pic {
+            display: none;
         }
     }
 }

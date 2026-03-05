@@ -85,14 +85,41 @@
   .notonly {
     &__pic {
       top: 47rem;
+      right: 0;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .notonly {
+    min-height: 45rem;
+    &__title {
+      font-size: vars.$offset;
+      line-height: 25px;
+    }
+
+    &__pic {
+      top: 30rem;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .notonly {
+    min-height: 35rem;
+
+    &__txt {
+      margin-bottom: 30px;
+    }
+
+    &__pic {
+      top: 32rem;
     }
   }
 }
 
 @media (max-width: 320px) {
   .notonly {
-    min-height: 43.6rem;
-    
     &__title {
       text-align: vars.$ctr;
       font-size: 25px;

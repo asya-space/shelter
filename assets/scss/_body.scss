@@ -109,6 +109,11 @@ body {
     max-width: 768px;
   }
 
+  .body-lock { 
+    transition: none;
+    overflow: hidden;
+  }
+
   .body-lock::before {
     @include mixins.lock();
   }
@@ -116,7 +121,7 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   .body-lock { 
-    transition: none; 
+    transition: none;
   }
 }
 

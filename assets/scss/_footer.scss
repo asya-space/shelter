@@ -87,12 +87,35 @@
       padding: 30px 35px;
       flex-direction: vars.$col;
       justify-content: flex-start;
-      min-height: 40rem;
+      min-height: 45rem;
       background-position: 98% 90%;
     }
 
     &__left {
       margin-bottom: vars.$offset;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+   .footer {
+      .container {
+        background-position: 58% 110%;
+      }
+   }
+}
+
+@media (max-width: 420px) {
+   .footer {
+      &__main {
+        font-size: vars.$offset;
+      }
+
+      &__email {
+      display: inline-block;
+      max-width: vars.$full;
+      overflow-wrap: break-word;
+      word-break: break-all;
     }
   }
 }

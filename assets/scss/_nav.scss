@@ -6,6 +6,7 @@
 
   &__list {
     display: vars.$flx;
+    flex-wrap: nowrap;
 
     &__item {
       position: relative;
@@ -34,42 +35,44 @@
       }
       
       &__link {
-          font-family: vars.$merry;
-          @include mixins.basic();
-          line-height: vars.$line;
-          font-size: 14px;
-          color: vars.$white;
-          letter-spacing: vars.$one;
-          cursor: pointer;
+        font-family: vars.$merry;
+        @include mixins.basic();
+        line-height: vars.$line;
+        font-size: 14px;
+        color: vars.$white;
+        letter-spacing: vars.$one;
+        cursor: pointer;
       }
     }
   }
 }
 
 @media (max-width: 768px) {
-  /*body overflow-x: hidden*/
   .nav {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: -320px;
+    right: 0px;
+    max-width: 320px;
     height: 100vh;
+    background-color: #292929;
+    transform: translateX(100%);
     transition: all .3s ease-in-out;
   }
 
-  .open {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #292929;
-    transition: transform 0.3s ease-in-out;
-    will-change: transform;
-    overflow-y: auto;
+  .nav.open {
+    transform: translateX(0);
   }
 
   .nav__list {
       @include mixins.navList();
       &__item {
         @include mixins.navItem();
+
+        &:nth-child(3) {
+            padding-left: 10px;
+            text-wrap: nowrap;
+          }
+
         &__link {
           @include mixins.navLink();
         }

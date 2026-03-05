@@ -7,7 +7,7 @@
     .container {
       margin-bottom: vars.$ten;
       padding: vars.$offset;
-      width: vars.$full;
+      max-width: vars.$full;
       height: vars.$full;
       border-radius: 9px;
       background-color: vars.$black;
@@ -69,4 +69,10 @@
 
 .cookie--visible {
   transform: translateY(vars.$null);
+}
+
+@media (max-width: 480px) {
+  .cookie {
+    right: 10px;
+  }
 }

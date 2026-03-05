@@ -29,8 +29,17 @@
     &__item {
       margin-bottom: 58px;
       margin-right: 25px;
+      place-self: vars.$ctr;
       &:nth-child(n + 6) {
         margin-left: 50%;
+      }
+
+      .inner {
+        display: vars.$flx;
+        flex-direction: column;
+        align-items: vars.$ctr;
+        width: 210px;
+        min-height: 113px;
       }
 
       &__img {
@@ -47,14 +56,6 @@
         @include mixins.temp();
         letter-spacing: 1px;
       }
-    }
-    
-    .inner {
-      display: vars.$flx;
-      flex-direction: column;
-      align-items: vars.$ctr;
-      width: 210px;
-      min-height: 113px;
     }
   }
 }
@@ -90,11 +91,27 @@
   }
 }
 
+@media (max-width: 580px) {
+  .help {
+    .container {
+      padding: 20px;
+    }
+
+    &__list {
+      &__item {
+        .inner {
+          width: 104px;
+        }
+      }
+    }
+  }
+}
+
 @media (max-width: 460px) {
   .help {
     .container {
       max-width: 460px;
-      padding: 42px 15px 15px 42px;
+      padding: 42px 15px 42px 15px;
     }
 
     &__main {
@@ -102,6 +119,7 @@
     }
 
     &__list {
+      margin: 0 auto;
       max-width: 320px;
       grid-template-columns: repeat(2, minmax(100px, 1fr));
       .inner {
