@@ -31,23 +31,12 @@
   &__link {
     display: block;
     padding: 15px 45px;
-    max-width: fit-content;
     min-height: 52px;
-    background-color: vars.$primary;
     border-radius: 9px;
     font-size: 17px;
     line-height: 22px;
-    color: vars.$black;
     letter-spacing: 2px;
-    transition: all .3s ease-in-out;
-  }
-
-  &__link:hover {
-    background-color: vars.$hov;
-  }
-
-  &__link:active {
-    background-color: #CC9767;
+    @include mixins.buttons();
   }
 
   &__pic {
