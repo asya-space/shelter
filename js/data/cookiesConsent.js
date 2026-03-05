@@ -43,13 +43,13 @@ export function initCookiesAgreement() {
     };
 
     acceptBtn.addEventListener('click', () => {
-        setCookie(COOKIE_NAME, CONSENT.ACCEPTED, 365);
+        setCookie(COOKIE_NAME, CONSENT.ACCEPTED, 1);
         banner.classList.remove('cookie--visible');
         enableAnalytics();
     });
 
     rejectBtn.addEventListener('click', () => {
-        setCookie(COOKIE_NAME, CONSENT.REJECTED, 365);
+        setCookie(COOKIE_NAME, CONSENT.REJECTED, 1);
         banner.classList.remove('cookie--visible');
         setTimeout(() => {
             document.querySelector('.change__box').classList.add('visible');
