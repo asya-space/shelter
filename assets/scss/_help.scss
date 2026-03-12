@@ -23,13 +23,14 @@
 
   &__list {
     display: grid;
+    place-content: vars.$ctr;
+    justify-items: vars.$ctr;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
 
     &__item {
       margin-bottom: 58px;
-      margin-right: 25px;
-      place-self: vars.$ctr;
+      place-items: vars.$ctr;
       &:nth-child(n + 6) {
         margin-left: 50%;
       }
@@ -38,7 +39,7 @@
         display: vars.$flx;
         flex-direction: column;
         align-items: vars.$ctr;
-        width: 210px;
+        width: 235px;
         min-height: 113px;
       }
 
@@ -87,6 +88,11 @@
 
     &__list {
       grid-template-columns: repeat(3, minmax(135px, 1fr));
+      &__item {
+        &:nth-child(n + 6) {
+          margin-left: 0;
+        }
+      }
     }
   }
 }
@@ -98,6 +104,7 @@
     }
 
     &__list {
+
       &__item {
         .inner {
           width: 104px;
@@ -119,16 +126,17 @@
     }
 
     &__list {
-      margin: 0 auto;
+      margin: vars.$aut;
       max-width: 320px;
       grid-template-columns: repeat(2, minmax(100px, 1fr));
+      
       .inner {
         width: 100px;
         height: 87px;
       }
 
       &__item {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
 
         &__title {
           font-size: 15px;
@@ -139,9 +147,6 @@
           margin-bottom: 20px;
           width: 50px;
           height: 50px;
-        }
-        &:not(:last-child) {
-          margin-right: 30px;
         }
       }
     }

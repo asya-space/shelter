@@ -17,12 +17,17 @@
     }
   }
 
-  &__title {
+  &__title,
+  &__span {
     margin: vars.$aut;
     margin-bottom: vars.$six;
     max-width: 400px;
     @include mixins.main();
     letter-spacing: 2px;
+  }
+
+  &__span {
+    margin: 0;
   }
 
   .slider {
@@ -206,9 +211,13 @@
     .container { 
       padding-top: 85px;
       max-width: 768px;
+      #page-loader {
+        height: 45em;
+      }
     }
     
-    &__title {
+    &__title,
+    &__span {
       letter-spacing: 2px;
     }
   
@@ -256,21 +265,46 @@
       max-width: 400px;
       padding-top: 42px;
       padding-bottom: 42px;
+      #page-loader {
+        top: 100px;
+        height: 48em;
+      }
     }
 
-    &__title {
+    &__title,
+    &__span {
       @include mixins.minimal();
-      margin-bottom: 42px;
+      margin-bottom: 15px;
+    }
+
+    &__span {
+      margin-bottom: vars.$null;
     }
 
     .slider {
-      margin-bottom: 6.5rem;
+      margin-bottom: 3rem;
       &__carousel {
         max-width: 320px;
       } 
+
       &__list {
         max-width: 270px;
+
         &__item {
+          &:hover {
+            transform: none;
+          }
+
+          &__card {
+            max-width: 260px;
+            box-shadow: none;
+            border: 1px solid vars.$hov;
+
+            &:hover {
+              box-shadow: none;
+            }
+          }
+
           &:not(:last-child) {
             margin-right: 40px;
           }
@@ -293,5 +327,3 @@
     }
   }
 }
-
-

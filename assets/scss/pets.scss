@@ -26,7 +26,7 @@ body {
 
   &__link {
     color: #5E5D5D;
-    }
+  }
 
   &__txt {
     font-family: vars.$merry;
@@ -100,7 +100,7 @@ body {
     padding: 80px 40px 95px;
     #page-loader {
       top: 200px;
-      height: 78.3%;
+      height: 80%;
     }
   }
 
@@ -113,11 +113,10 @@ body {
   }
 }
 
-  /* PAGINATION */
+/* PAGINATION */
 
 .pagination {
   position: relative;
-  margin: vars.$aut;
   margin-bottom: 0;
   max-width: 1200px;
 
@@ -131,15 +130,16 @@ body {
     margin-bottom: 65px;
     padding: 0;
     display: grid;
+    justify-content: vars.$ctr;
+    justify-items: vars.$ctr;
     grid-template-columns: repeat(4, 1fr);
     gap: vars.$mid;
     column-gap: 40px;
 
     &__item {
       max-width: vars.$card;
-      height: 480px;
+      height: 435px;
       display: vars.$flx !important;
-      flex: 00 auto;
       flex-direction: vars.$col;
       justify-content: vars.$ctr;
       align-items: vars.$ctr;
@@ -256,7 +256,7 @@ body {
       margin-right: vars.$offset;
     }
 
-    /* if disabled */
+/* disable */
 
     .disabled,
     .disabled:hover,
@@ -271,7 +271,7 @@ body {
     }
   }
 }
-/* end disabled */
+/* end disable */
 
 /* animate pagination */
 .pets__list {
@@ -295,11 +295,14 @@ body {
   .our {
     .container {
       max-width: 768px;
+      #page-loader {
+        height: 87%;
+      }
     }
 
     .pagination {
       &__list {
-        grid-template-columns: repeat(2, minmax(vars.$card, 1fr));
+        grid-template-columns: repeat(2, minmax(vars.$card, 270px));
       }
     }
   }
@@ -328,7 +331,6 @@ body {
     }
 
   .burger {
-    z-index: 2;
     &__line {
       background-color: vars.$primary;
     }
@@ -378,17 +380,23 @@ body {
   .our {
     .container {
       padding: 42px 25px 42px;
+
+      #page-loader {
+        top: 150px;
+        height: 83%;
+      }
     }
 
     .pagination {
       max-width: 290px;
+      margin: vars.$aut;
 
       &__list {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(1, 270px);
+        row-gap: 40px;
       }
 
       &__controls {
-        transform: translateX(-11px);
 
         &__double-prev {
           margin-right: 10px;
