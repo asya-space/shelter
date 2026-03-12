@@ -2,6 +2,7 @@ import { pets } from './data/pets.js';
 import { shuffle } from './utils/shuffle.js'
 import { generatePetCard } from './components/generateCard.js';
 import { render } from './utils/render.js';
+
 /* arrows */
 const rightBtn = document.querySelector('.slider__next');
 const leftBtn = document.querySelector('.slider__prev');
@@ -91,7 +92,7 @@ function slide(dir = 1) {
 
     // slider into init step
     ul.style.transform = 'translateX(0px)';
-    ul.offsetHeight; // you know already :)
+    ul.offsetHeight;
     ul.style.transition = 'transform 500ms ease';
 
     visibleIndexes = newItems;
