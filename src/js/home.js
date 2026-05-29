@@ -1,0 +1,6 @@
+import '../styles/main.scss'
+import '../js/components/burger'
+import './utils/cookies'
+import './utils/loader'
+import './components/slider'
+import './components/modalTriggers'

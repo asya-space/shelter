@@ -1,9 +1,3 @@
-import '../styles/main.scss'
-import './components/slider'
-import './utils/cookies'
-import './components/modalTriggers'
-import './utils/loader'
-
 const burgerBtn = document.querySelector('.burger'),
       nav = document.getElementById('menu'),
       links = nav.querySelectorAll('.nav__list__item__link'),

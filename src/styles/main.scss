@@ -1,6 +1,6 @@
 @use 'sass:meta';
+@use './abstracts/reset';
 @use './layout/body';
-
 @use './layout/nav';
 @use './layout/notonly';
 @use './layout/about';
@@ -10,7 +10,6 @@
 @use './components/slider';
 @use './components/modal';
 
-@use './pages/pets';
 @use './pages/cookies';
 
 html {

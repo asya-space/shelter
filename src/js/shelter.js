@@ -1,0 +1,6 @@
+import '../styles/pages/_pets.scss'
+import '../js/components/burger'
+import '../js/utils/cookies'
+import '../js/utils/loader'
+import '../js/components/pagination'
+import './components/modalTriggers'
