@@ -7,7 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         shelter: resolve(__dirname, 'shelter/index.html'),
-        privacy: resolve(__dirname, 'privacy/privacy.html'),
+        privacy: resolve(__dirname, 'privacy/index.html'),
       },
     },
   },
