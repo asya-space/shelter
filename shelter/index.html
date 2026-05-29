@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <base href="./">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Our pets</title>
+        <link rel="icon" type="image/x-icon" href="./public/favicon.png">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/pets.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="container">
+                <div class="header__logo">
+                    <h1 class="header__title"><a class="header__link" href="#">Fur-Ever Friends</a></h1>
+                    <p class="header__txt">A safe home for pets in NY</p>
+                </div>
+                <nav class="nav" id="menu">
+                    <ul class="nav__list">
+                        <li class="nav__list__item"><a class="nav__list__item__link" href="./index.html">About us</a></li>
+                        <li class="nav__list__item"><a class="nav__list__item__link" href="#ourfriends">Our furry friends</a></li>
+                        <li class="nav__list__item"><a class="nav__list__item__link" href="./index.html#help">Support the shelter</a></li>
+                        <li class="nav__list__item"><a class="nav__list__item__link" href="#footer">Contacts</a></li>
+                    </ul>
+                </nav>
+                <div class="burger" aria-controls="menu" aria-expanded="false" aria-label="Open menu">
+                    <div class="burger__line"></div>
+                    <div class="burger__line"></div>
+                    <div class="burger__line"></div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section class="our" id="ourfriends">
+                <div class="container">
+                    <h2 class="our__title">Our house-hunting <span class="our__span">friends</span></h2>
+                    <!-- preloader-->
+                    <div id="page-loader">
+                        <div class="loader-bar"></div>
+                    </div>
+                    <!-- pagination -->
+                    <div class="pagination">
+                        <div class="pagination__page">
+                            <ul class="pagination__list pets__list">
+                                <li class="pagination__list__item template">
+                                    <div class="pagination__list__item__card">
+                                        <picture class="pagination__list__item__card__pic">
+                                            <source srcset="#" type="image/png" width="270" height="270">
+                                            <img class="pagination__list__item__card__pic__img card__img" src="#" width="270" height="270" alt="pet">
+                                        </picture>
+                                        <p class="pagination__list__item__card__name card__name"></p>
+                                        <button class="pagination__list__item__card__btn">Learn more</button>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="pagination__controls">
+                                <i class="pagination__controls__arrow pagination__controls__double-prev disabled">
+                                    <svg width="25" height="11" viewBox="0 0 25 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.94687 10.7852L0.913671 6.08789V4.98438L9.94687 0.287109V1.625L2.43711 5.53125L9.94687 9.44727V10.7852ZM24.018 10.7852L14.9848 6.08789V4.98438L24.018 0.287109V1.625L16.5082 5.53125L24.018 9.44727V10.7852Z" fill="#212020"/>
+                                    </svg>
+                                </i>
+                                <i class="pagination__controls__arrow pagination__controls__prev disabled">
+                                    <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.98242 10.7852L0.949219 6.08789V4.98438L9.98242 0.287109V1.625L2.47266 5.53125L9.98242 9.44727V10.7852Z" fill="#212020"/>
+                                    </svg>
+                                </i>
+                                <p class="pagination__controls__digit">1</p>
+                                <i class="pagination__controls__arrow pagination__controls__next">
+                                    <svg width="10" height="11" viewBox="0 0 10 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M9.04102 6.08789L0.0078125 10.7852V9.44727L7.51758 5.53125L0.0078125 1.625V0.287109L9.04102 4.98438V6.08789Z" fill="#212020"/>
+                                    </svg>
+                                </i>
+                                <i class="pagination__controls__arrow pagination__controls__double-next">
+                                    <svg width="25" height="11" viewBox="0 0 25 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.0055 6.08789L0.972265 10.7852V9.44727L8.48203 5.53125L0.972265 1.625V0.287109L10.0055 4.98438V6.08789ZM24.0766 6.08789L15.0434 10.7852V9.44727L22.5531 5.53125L15.0434 1.625V0.287109L24.0766 4.98438V6.08789Z" fill="#212020"/>
+                                    </svg>
+                                </i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer" id="footer">
+            <div class="container">
+                <div class="footer__left">
+                    <h3 class="footer__main">For questions and suggestions</h3>
+                    <ul class="footer__list">
+                        <li class="footer__list__item">
+                            <i class="footer__list__item__svg">
+                                <img width="40" height="32" src="/icons/icon-email.svg" alt="mail">
+                            </i>
+                            <a class="footer__list__item__link footer__email" href="mailto:email@fureverfriends.com">email@fureverfriends.com</a>
+                        </li>
+                        <li class="footer__list__item">
+                            <i class="footer__list__item__svg"><img width="40" height="32" src="/icons/icon-phone.svg" alt="phone"></i>
+                                <a class="footer__list__item__link" href="tel:+17185550123">+1 (718) 555 0123</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__right">
+                    <h3 class="footer__main">We are waiting for your visit</h3>
+                    <ul class="footer__list">
+                        <li class="footer__list__item">
+                            <i class="footer__list__item__svg"><img src="/icons/icon-marker.svg" width="22" height="32" alt="local"></i>
+                            <a class="footer__list__item__link" href="https://maps.app.goo.gl/sdkguzTAqFLRRaFr5" target="_blank" rel="noreferrer noopener">77-41 Cranberry St, Brooklyn, NY</a>
+                        </li>
+                        <li class="footer__list__item">
+                            <i class="footer__list__item__svg"><img src="/icons/icon-global.svg" width="22" height="32" alt="local"></i>
+                            <a class="footer__list__item__link" href="https://maps.app.goo.gl/MaZXRdQEQo6FeVACA" target="_blank" rel="noreferrer noopener">108 Claremont Ave, Jersey City</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="cookie">
+            <div class="container">
+                <p class="cookie__txt">We use cookies to understand how you use our website</p>
+                <p class="cookie__txt">Please, read our <a class="cookie__txt__privacy" href="./privacy/privacy.html" target="_blank" rel="noreferrer noopener">Privacy Policy</a></p>
+                <div class="cookie__buttons">
+                    <button class="cookie__buttons__tap" id="accept">Accept All</button>
+                    <button class="cookie__buttons__tap" id="reject">Reject All</button>
+                </div>
+            </div>
+        </div>
+        <div class="change__box">
+            <button class="cookie__buttons__tap change__box__btn" id="change">Change Mind</button>
+        </div>
+        <div id="modal-root"></div>
+        <script type="module" src="./src/js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+@use 'sass:meta';
+@use './layout/body';
+
+@use './layout/nav';
+@use './layout/notonly';
+@use './layout/about';
+@use './layout/help';
+@use './layout/donat';
+@use './layout/footer';
+@use './components/slider';
+@use './components/modal';
+
+@use './pages/pets';
+@use './pages/cookies';
+
+html {
+  scroll-behavior: smooth !important;
+  user-select: none;
+}

@@ -1,0 +1,158 @@
+@use './vars';
+
+@mixin basic {
+  font-weight: vars.$regular;
+  font-style: vars.$norm;
+}
+
+@mixin main {
+  font-family: vars.$lora;
+  font-weight: vars.$regular;
+  font-size: 35px;
+  font-style: vars.$norm;
+  line-height: 45px;
+  color: vars.$dark;
+}
+
+@mixin temp {
+  font-family: vars.$lora;
+  font-weight: vars.$regular;
+  font-style: vars.$norm;
+  font-size: vars.$offset;
+  line-height: 22px;
+  color: vars.$dark;
+}
+
+@mixin controls {
+  display: vars.$flx;
+  justify-content: vars.$ctr;
+  align-items: vars.$ctr;
+  border: 1px solid transparent;
+  border-radius: vars.$hund;
+  width: 50px;
+  height: 50px;
+}
+
+@mixin minimal {
+  text-align: vars.$ctr;
+  font-size: vars.$std;
+  line-height: vars.$lineHeight;
+}
+
+@mixin navList {
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+}
+
+@mixin navItem {
+  width: fit-content;
+}
+
+@mixin navLink {
+  font-size: 30px;
+  color: #CDCDCD;
+  transition: transform 0.3s ease-in-out;
+}
+
+@mixin lock {
+  content: "";
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  backdrop-filter: brightness(70%);
+  transition: all .3s ease-in-out;
+}
+
+@mixin backShadow {
+  border-radius: vars.$radius;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@mixin loadingBar {
+  .container {
+    position: relative;
+    #page-loader {
+      position: absolute;
+      top: 190px;
+      left: 0;
+      padding: 0 15px 0 15px;
+      width: vars.$full;
+      height: vars.$full;
+      background-color: vars.$slider-back;
+      z-index: 3;
+      display: vars.$flx;
+      justify-content: vars.$ctr;
+      align-items: vars.$ctr;
+      transition: opacity 0.2s ease-in-out, visibility 0.2s;
+    }
+
+    .loader-bar {
+      width: vars.$full;
+      height: 4px;
+      border-radius: 3px;
+      background-color: vars.$bank;
+      position: relative;
+      overflow: hidden;
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: vars.$full;
+        background-color: vars.$back;
+        animation: loading 1.5s infinite;
+      }
+    }
+
+    @keyframes loading {
+      0% { left: -100%; }
+      100% { left: vars.$full; }
+    }
+
+    .loader-hidden {
+      visibility: hidden;
+    }
+  }
+
+  @media (max-width: 425px) {
+    #page-loader {
+      top: 70px;
+    }
+  }
+}
+
+@mixin buttons {
+  max-width: fit-content;
+  background-color: vars.$primary;
+  color: vars.$black;
+  transition: all .3s ease-in-out;
+  &:hover {
+      background-color: vars.$hov;
+    }
+
+    &:active {
+      background-color: #CC9767;
+    }
+}
+
+@mixin cookie {
+  position: fixed;
+  bottom: 0;
+  left: 10px;
+  width: fit-content;
+  height: fit-content;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+@mixin blackCookie {
+  margin-bottom: vars.$ten;
+  font-weight: vars.$regular;
+  font-family: vars.$merry;
+  color: vars.$fa;
+}

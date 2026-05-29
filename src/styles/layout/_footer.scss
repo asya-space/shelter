@@ -1,0 +1,143 @@
+@use '../abstracts/vars';
+@use '../abstracts/mixins';
+
+.footer {
+  background: linear-gradient(90deg, rgba(45,35,28,1) 0%, rgba(105,75,55,1) 100%);
+
+  .container {
+    padding: 60px 40px 40px 40px;
+    display: vars.$flx;
+    background: 96% 98% no-repeat url('../../../images/footer-cat.png');
+  }
+
+  &__main {
+    margin-bottom: 35px;
+    @include mixins.main();
+    color: vars.$white;
+  }
+
+  &__left {
+    margin-right: 120px;
+    max-width: 400px;
+  }
+
+  &__right {
+    max-width: 350px;
+  }
+
+  &__list {
+    &__item {
+      display: vars.$flx;
+      align-items: center;
+
+      &__svg {
+        margin-right: vars.$offset;
+      }
+
+      &__link {
+        @include mixins.temp();
+        color: vars.$primary;
+        letter-spacing: 1px;
+        transition: all .3s ease-in-out;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
+    &__item:first-child {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 1126px) {
+  .footer {
+    &__right {
+      padding: 5px;
+      border-radius: vars.$radius;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    .container {
+      padding-top: 35px;
+      padding-bottom: 22.4rem;
+      justify-content: vars.$ctr;
+      background-position: 50% 100%;
+    }
+
+    &__right {
+      background-color: transparent;
+      padding: 0;
+    }
+
+    &__left {
+      margin-right: 60px;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  .footer {
+    .container {
+      padding: 30px 35px;
+      flex-direction: vars.$col;
+      justify-content: flex-start;
+      min-height: 45rem;
+      background-position: 98% 90%;
+    }
+
+    &__left {
+      margin-bottom: vars.$offset;
+    }
+  }
+}
+
+@media (max-width: 560px) {
+   .footer {
+      .container {
+        background-position: 58% 110%;
+      }
+   }
+}
+
+@media (max-width: 420px) {
+   .footer {
+      &__main {
+        font-size: vars.$offset;
+      }
+
+      &__email {
+      display: inline-block;
+      max-width: vars.$full;
+      overflow-wrap: break-word;
+      word-break: break-all;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .footer {
+    &__main {
+      @include mixins.minimal();
+      margin-bottom: 45px;
+    }
+
+    &__left, 
+    &__right {
+      margin-right: 0;
+    }
+
+    &__left {
+      margin-bottom: 40px;
+    }
+
+    &__right {
+      margin-bottom: 30px;
+    }
+  }
+}
